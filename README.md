@@ -93,7 +93,7 @@ port 5000 at `http://meow-danger-cat.ngrok.com` (reserved subdomains
 are a paid feature of ngrok):
 
 ```bash
-ngrok -subdomain=chunky-danger-monkey 5000
+ngrok -subdomain=meow-danger-cat 5000
 ```
 
 
