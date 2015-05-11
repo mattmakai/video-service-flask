@@ -18,8 +18,8 @@ Development environment requirements:
   [pip](http://www.pip-installer.org/en/latest/) to install dependencies.
 
 1. Create a new virtualenv.
-    virtualenv videoflask
-    source videoflask/bin/activate
+        virtualenv videoflask
+        source videoflask/bin/activate
     
 1. Clone repository at https://github.com/TwilioDevEd/video-service-flask
 
