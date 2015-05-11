@@ -9,6 +9,15 @@ requirements.txt file that may be useful in creating application with Twilio.
 ## Deploy On Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/TwilioDevEd/video-service-flask)
 
+When deploying from the commandline instead of the Heroku Deploy button, use 
+the following commands from the root of the project directory.
+
+        heroku create
+
+        heroku config:set SECRET_KEY='something super secret'
+        heroku config:set TWILIO_ACCOUNT_SID='ACxxxxxxxxxxxxxxxx'
+        heroku config:set TWILIO_AUTH_TOKEN='xxxxxxxxxxxxxxxxxxx'
+        heroku config:set DATABASE_URL='postgresql://user:passwd@localhost/videoflask'
 
 ## Running the Project on Your Machine
 Development environment requirements:
@@ -33,25 +42,34 @@ Development environment requirements:
         cd aquarius-python-flask
 
 
-Install local dependencies.
+1. Install local dependencies.
 
-pip install -r requirements.txt
-Set environment variables.
-
-export SECRET_KEY='super secret key'
-export DATABASE_URL='postgresql://username:password@localhost/2faf'
-export TWILIO_ACCOUNT_SID='authyapikey'
-Create database and schema.
-
-createdb 2faf
-python create_db.py
-Run the app.
-
-python run.py
-Open web browser and head to http://localhost:5000/ to see the app.
+        pip install -r requirements.txt
 
 
-### Install Dependencies
+1. Set environment variables. Make sure to replace the values with your
+   own environment settings.
+
+        export DEBUG=True
+        export SECRET_KEY='super secret key'
+        export DATABASE_URL='postgresql://user:passwd@localhost/videoflask'
+        export TWILIO_ACCOUNT_SID='ACxxxxxxxxxxxxxxxxxxxx'
+        export TWILIO_AUTH_TOKEN='ACxxxxxxxxxxxxxxxxxxxx'
+
+
+1. Create database and schema.
+
+        createdb videoflask
+        python create_db.py
+
+
+1. Run the app.
+
+        python run.py
+
+
+Open web browser and head to http://localhost:5000/ to see your local app
+running.
 
 
 
