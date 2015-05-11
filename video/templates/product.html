@@ -1,4 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>{{ product.name }}</h1>
+<div class="row">
+    <div class="col-md-6">
+        <p><a href="{{ url_for('index') }}">&lt;&lt; View All Ships</a></p>
+        {% include "partials/_ship_detail.html" %}
+    </div>
+    <div class="col-md-6 video">
+        <button id="help" class="btn btn-primary">Need Help? 
+            Chat with Support Now!</button>
+        {% include "partials/_video.html" %}
+    </div>
+</div>
+{% endblock %}
+
+{% block js_body %}
+    <script src="{{ url_for('static', filename='js/product.js') }}"></script>
 {% endblock %}

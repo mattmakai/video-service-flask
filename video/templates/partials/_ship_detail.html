@@ -1,0 +1,32 @@
+<table class="table">
+    <tr>
+        <th>Starship Class</th>
+        <td>{{ product.starship_class }}</td>
+    </tr>
+    <tr>
+        <th>Manufacturer</th>
+        <td>{{ product.manufacturer }}</td>
+    </tr>
+    <tr>
+        <th>Cost (Credits)</th>
+        <td>{% include "partials/_cost_in_credits.html" %}</td>
+    </tr>
+    <tr>
+        <th>Length</th>
+        <td>{{ product.length|default(0) }} meters</td>
+    </tr>
+    <tr>
+        <th>Max Speed (Megalight)</th>
+        <td>{{ product.MGLT|default(0) }} 
+            <a href="http://starwars.wikia.com/wiki/Megalight" 
+               target="_blank"> MGLT</a></td>
+    </tr>
+    <tr>
+        <th>Crew</th>
+        <td>{{ product.crew|default(0) }} 
+    </tr>
+    <tr>
+        <th>Passengers</th>
+        <td>{{ product.passengers|default(0) }} 
+    </tr>
+</table>

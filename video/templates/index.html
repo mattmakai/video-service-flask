@@ -16,19 +16,13 @@
                     <th>Passengers</th>
                     <th>Price (Credits)</th>
                 </tr>
-                {% for ship in ships %}
+                {% for product in products %}
                 <tr>
-                    <td><a href="">{{ ship.model }}</a></td>
-                    <td>{{ ship.manufacturer }}</td>
-                    <td>{{ ship.crew|default(0) }} </td>
-                    <td>{{ ship.passengers|default(0) }} </td>
-                    <td>{% if ship.cost_in_credits == 'unknown' %}
-                            Talk to sales
-                        {% else %}
-                            {{ ship.cost_in_credits }} 
-                            <span class="credits"><img src="{{ url_for('static', filename='img/credits.svg') }}"></span>
-                        {% endif %}
-                    </td>
+                    <td><a href="{{ url_for('products') }}?url={{ product.url }}">{{ product.model }}</a></td>
+                    <td>{{ product.manufacturer }}</td>
+                    <td>{{ product.crew|default(0) }} </td>
+                    <td>{{ product.passengers|default(0) }} </td>
+                    <td>{% include "partials/_cost_in_credits.html" %}</td>
                 </tr>
                 {% endfor %}
             </table>

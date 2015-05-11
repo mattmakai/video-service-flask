@@ -1,0 +1,8 @@
+{% if product.cost_in_credits == 'unknown' %}
+    Talk to sales
+{% else %}
+    {{ product.cost_in_credits }} 
+    <span class="credits">
+        <img src="{{ url_for('static', filename='img/credits.svg') }}">
+    </span>
+{% endif %}
