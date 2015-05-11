@@ -1,0 +1,28 @@
+{
+  "name": "Customer Service with Twilio Video",
+  "description": "Demo app showing video-powered customer service with Twilio",
+  "keywords": [
+    "twilio",
+    "python",
+    "flask",
+    "postgresql",
+    "video"
+  ],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "API username - find your account SID at https://www.twilio.com/user/account/voice-messaging",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "API password - find your auth token at https://www.twilio.com/user/account/voice-messaging",
+      "required": true
+    }
+  },
+  "website": "https://github.com/TwilioDevEd/video-service-flask",
+  "repository": "https://github.com/TwilioDevEd/video-service-flask",
+  "logo": "https://s3.amazonaws.com/howtodocs/twilio-logo.png",
+  "success_url": "/landing",
+  "addons": [
+    "heroku-postgresql"
+  ]
+}

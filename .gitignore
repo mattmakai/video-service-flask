@@ -1,0 +1,14 @@
+*.egg*
+*.py[co]
+*.swp
+*.swo
+.DS_Store
+*~
+*.db
+*.log
+assets
+tmp/
+setenvs.sh
+deploy/ssh_keys/
+deploy/ssl_cert/
+.env
