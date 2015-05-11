@@ -18,6 +18,13 @@ the following commands from the root of the project directory.
         heroku config:set TWILIO_ACCOUNT_SID='ACxxxxxxxxxxxxxxxx'
         heroku config:set TWILIO_AUTH_TOKEN='xxxxxxxxxxxxxxxxxxx'
         heroku config:set DATABASE_URL='postgresql://user:passwd@localhost/videoflask'
+        
+        heroku addons:add heroku-postgresql
+
+        git push heroku master
+
+        heroku run python create_db.py
+
 
 ## Running the Project on Your Machine
 Development environment requirements:
