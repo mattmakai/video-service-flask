@@ -29,7 +29,8 @@ the following commands from the root of the project directory.
 ## Running the Project on Your Machine
 Development environment requirements:
 
-* PostgreSQL with access to create a database such as "videoflask"
+* [PostgreSQL](http://www.postgresql.org/) with access to create a 
+  database such as "videoflask"
 * [virtualenv](https://virtualenv.pypa.io/en/latest/) and 
   [pip](http://www.pip-installer.org/en/latest/) to install dependencies.
 
