@@ -18,11 +18,17 @@
                 </tr>
                 {% for ship in ships %}
                 <tr>
-                    <td><a href="#">{{ ship.model }}</a></td>
+                    <td><a href="">{{ ship.model }}</a></td>
                     <td>{{ ship.manufacturer }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ ship.crew|default(0) }} </td>
+                    <td>{{ ship.passengers|default(0) }} </td>
+                    <td>{% if ship.cost_in_credits == 'unknown' %}
+                            Talk to sales
+                        {% else %}
+                            {{ ship.cost_in_credits }} 
+                            <span class="credits"><img src="{{ url_for('static', filename='img/credits.svg') }}"></span>
+                        {% endif %}
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
