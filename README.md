@@ -21,13 +21,18 @@ Development environment requirements:
 
         virtualenv videoflask
         source videoflask/bin/activate
-    
+
+
 1. Clone repository at https://github.com/TwilioDevEd/video-service-flask
 
-git clone git@github.com:makaimc/aquarius-python-flask
-Change into the new directory.
+        git clone git@github.com:TwilioDevEd/video-service-flask
 
-cd aquarius-python-flask
+
+1. Change into the new directory.
+
+        cd aquarius-python-flask
+
+
 Install local dependencies.
 
 pip install -r requirements.txt
