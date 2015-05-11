@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Customer Service with Twilio Video</title>
+        <!-- Twilio shortcut icons-->
+        <link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico">
+        <link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/bundles/marketing/img/favicons/favicon_72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png">
+        <!-- Include Font Awesome Icons-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <!-- Twitter Bootstrap included for some basic styling-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <!-- HTML 5 shims for older IE-->
+        <!--[if lt IE 9]>
+            <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
+            </script>
+            <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js">
+            </script>
+        <![endif]-->
+        <!-- Include jQuery and Bootstrap scripts-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <footer class="container">
+            Made with <i class="fa fa-heart"></i> by your pals 
+            <a href="http://www.twilio.com">@twilio</a>. Data courtesy of the
+            <a href="http://swapi.co/">The Star Wars API</a>.
+        </footer>
+    </body>
+</html>
