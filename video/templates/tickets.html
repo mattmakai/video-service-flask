@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="main" class="container">
-    <h1>Current Support Tickets</h1>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table">
-                <tr>
-                    <th>Product</th>
-                    <th>Time In Queue</th>
-                    <th>Handle Ticket</th>
-                </tr>
-            </table>
-        </div>
+<h1>Current Support Tickets</h1>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Product</th>
+                <th>Time In Queue</th>
+                <th>Handle Ticket</th>
+            </tr>
+            {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket.product_url }}</td>
+                <td></td>
+                <td><a href="#">Help Customer</a></td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </div>
 {% endblock %}

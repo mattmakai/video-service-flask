@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Watto's Budget Starship Emporium</h1>
+    <p>
+        Step right up and browse the finest selection of gently 
+        used starships in the Outer Rim Territories, fit for every budget!
+    </p>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>Model</th>
+                    <th>Manufacturer</th>
+                    <th>Crew</th>
+                    <th>Passengers</th>
+                    <th>Price (Credits)</th>
+                </tr>
+                {% for ship in ships %}
+                <tr>
+                    <td><a href="#">{{ ship.model }}</a></td>
+                    <td>{{ ship.manufacturer }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,12 +1,13 @@
 from flask import render_template
 
 
-from . import app
+from . import app, db
+from .models import SupportTicket
 
 
 @app.route('/')
-def demo():
-    return render_template('demo.html')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/products')
@@ -16,7 +17,8 @@ def products():
 
 @app.route('/tickets', methods=['GET', 'POST'])
 def tickets():
-    return render_template('tickets.html')
+    tickets = db.session.query(SupportTicket).all()
+    return render_template('tickets.html', tickets=tickets)
 
 
 @app.route('/tickets/<int:id>')
