@@ -18,6 +18,7 @@ Development environment requirements:
   [pip](http://www.pip-installer.org/en/latest/) to install dependencies.
 
 1. Create a new virtualenv.
+
         virtualenv videoflask
         source videoflask/bin/activate
     
