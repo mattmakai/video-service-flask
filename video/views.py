@@ -4,6 +4,9 @@ from flask import render_template, request, Response
 
 from . import app, db
 from .models import SupportTicket
+from twilio.rest import TwilioRestClient
+
+client = TwilioRestClient()
 
 # List endpoint for the starwars ship API
 SWAPI = 'http://swapi.co/api/starships'
@@ -46,8 +49,17 @@ def tickets():
             return Response('Hang tight, an agent will '
                             'be with you shortly!', 200)
 
+
 @app.route('/tickets/<int:ticket_id>')
 def ticket(ticket_id):
+    token = _generate_token()
+
     return "help customer page"
+
+
+def _generate_token():
+    signing_key = client.signing_keys.create(friendly_name="Signal video")
+    # process this and return token..?
+    return signing_key
 
 
