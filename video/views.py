@@ -1,5 +1,6 @@
+import datetime
 import requests
-from flask import render_template, request
+from flask import render_template, request, Response
 
 from . import app, db
 from .models import SupportTicket
@@ -33,16 +34,20 @@ def products():
 def tickets():
     if request.method == 'GET':
         tickets = db.session.query(SupportTicket).all()
-        return render_template('tickets.html', tickets=tickets)
+        return render_template('tickets.html', tickets=tickets,
+                               now=datetime.datetime.now())
     elif request.method == 'POST':
         endpoint = request.form.get('endpoint', None)
         product_url = request.form.get('productUrl', None)
         if endpoint is not None and product_url is not None:
-            support_ticket = SupportTicket()
+            support_ticket = SupportTicket(endpoint, product_url)
+            db.session.add(support_ticket)
+            db.session.commit()
+            return Response('Hang tight, an agent will '
+                            'be with you shortly!', 200)
 
-
-@app.route('/tickets/<int:id>')
-def ticket():
-    pass
+@app.route('/tickets/<int:ticket_id>')
+def ticket(ticket_id):
+    return "help customer page"
 
 

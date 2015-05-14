@@ -10,11 +10,11 @@
                 <th>Time In Queue</th>
                 <th>Handle Ticket</th>
             </tr>
-            {% for ticket in tickets %}
+            {% for ticket in tickets|sort(attribute='created_at') %}
             <tr>
                 <td>{{ ticket.product_url }}</td>
-                <td></td>
-                <td><a href="#">Help Customer</a></td>
+                <td>{{ now - ticket.created_at }}</td>
+                <td><a href="{{ url_for('ticket', ticket_id=ticket.id) }}">Help Customer</a></td>
             </tr>
             {% endfor %}
         </table>
