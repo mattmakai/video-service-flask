@@ -31,8 +31,14 @@ def products():
 
 @app.route('/tickets', methods=['GET', 'POST'])
 def tickets():
-    tickets = db.session.query(SupportTicket).all()
-    return render_template('tickets.html', tickets=tickets)
+    if request.method == 'GET':
+        tickets = db.session.query(SupportTicket).all()
+        return render_template('tickets.html', tickets=tickets)
+    elif request.method == 'POST':
+        endpoint = request.form.get('endpoint', None)
+        product_url = request.form.get('productUrl', None)
+        if endpoint is not None and product_url is not None:
+            support_ticket = SupportTicket()
 
 
 @app.route('/tickets/<int:id>')

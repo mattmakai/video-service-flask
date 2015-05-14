@@ -47,7 +47,7 @@ Development environment requirements:
 
 1. Change into the new directory.
 
-        cd aquarius-python-flask
+        cd video-service-flask
 
 
 1. Install local dependencies.
